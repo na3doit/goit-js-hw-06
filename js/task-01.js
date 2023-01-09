@@ -1,5 +1,9 @@
-const getSumCategories = document.querySelectorAll('#categories .item');
-const message = 'Number of categories:';
-console.log(message, getSumCategories.length);
-const getSumElements = document.querySelectorAll(' li');
-console.log(getSumElements);
+const getSumCategories = document.querySelectorAll('.item');
+console.log(`Number of categories: ${getSumCategories.length}`);
+
+const getTitle = [];
+document.querySelectorAll('.item h2').forEach(function (title) {
+  getTitle.push(title.textContent);
+});
+
+console.log(getTitle);
