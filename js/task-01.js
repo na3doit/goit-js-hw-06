@@ -1,17 +1,6 @@
-const getSumCategories = document.querySelectorAll('.item');
-console.log(`Number of categories: ${getSumCategories.length}`);
-
-const getCategory = [];
-document.querySelectorAll('.item h2').forEach(title => {
-  getCategory.push(title.textContent);
+const ulElem = document.querySelector('#categories');
+console.log('Number of categories:', ulElem.children.length);
+[...ulElem.children].forEach(elem => {
+  console.log('Category:', elem.querySelector('h2').textContent);
+  console.log('Elements:', elem.querySelectorAll('li').length);
 });
-
-const getElements = [];
-document.querySelectorAll('.item ul').forEach(element => {
-  getElements.push(element.children.length);
-});
-
-for (let i = 0; i < getSumCategories.length; i += 1) {
-  console.log(`Category: ${getCategory[i]}`);
-  console.log(`Elements: ${getElements[i]}`);
-}

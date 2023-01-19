@@ -1,20 +1,16 @@
-
 const form = document.querySelector('.login-form');
 form.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(event) {
   event.preventDefault();
-  const emailValue = event.currentTarget.elements.email.value;
-  const emailKey = event.currentTarget.elements.email.name;
-  const passValue = event.currentTarget.elements.password.value;
-  const passKey = event.currentTarget.elements.password.name;
+  const { email, password } = event.currentTarget.elements;
 
-  if (emailValue === '' || passValue === '') {
+  if (email.value === '' || password.value === '') {
     alert('Увага! Поля email i password  повинні бути заповнені!');
   } else {
     const formField = {
-      [emailKey]: emailValue,
-      [passKey]: passValue,
+      [email.name]: email.value,
+      [password.name]: password.value,
     };
     console.log(formField);
     form.reset();
